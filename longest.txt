@@ -1,0 +1,26 @@
+//Write a program to input a sentence and find the longest word .
+import java.util.Scanner;
+
+public class LongestWord {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String  str,word,lword;
+        System.out.println("enter a string");
+        str= sc.nextLine();
+        word="";//read first word
+        lword="";//read last word
+        str=str+" ";//concatnation
+        for (int i=0;i<str.length();i++){
+            char ch=str.charAt(i);
+            if (ch==' '){
+                if (word.length()>lword.length())
+                    lword=word;
+                word="";
+            }
+            else
+                word=word+ch;
+        }
+        System.out.println("Longest is"+lword+"Length is"+lword.length());
+
+    }
+}

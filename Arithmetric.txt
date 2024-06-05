@@ -1,0 +1,25 @@
+//Wap to show an Arithmetic exception in a program
+import java.util.Scanner;
+
+public class ArthmetricException extends Throwable {
+    public static void main(String[] args) throws ArthmetricException {
+        try {
+            Scanner sc=new Scanner(System.in);//user input
+            int numerator,denominator,result;//declare
+            System.out.println("enter a numerator");
+            numerator=sc.nextInt();
+            System.out.println("enter a denominator");
+            denominator= sc.nextInt();
+            result=numerator/denominator;
+            System.out.println("result"+result);
+
+        }
+        catch (Exception e)// text message
+        {
+            System.out.println("Error : " +e.getMessage());
+        }
+        finally {
+            System.out.println("The block is executing");
+}
+}
+}

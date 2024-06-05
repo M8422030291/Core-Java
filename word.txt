@@ -1,0 +1,30 @@
+//Accept two strings, a word and a sentence. Then find number of times the word is present in given string. If I enter 'THE' and 'THE BIG FAT THE ODORE', then the computer should display 2.
+import java.util.Scanner;
+public class WordFrequency {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a word: ");
+        String word = scanner.nextLine().trim().toUpperCase();
+
+        System.out.print("Enter a sentence: ");
+        String sentence = scanner.nextLine().toUpperCase();
+
+        int frequency = countWordFrequency(word, sentence);
+        System.out.println("Frequency of '" + word + "' in the sentence: " + frequency);
+    }
+
+    private static int countWordFrequency(String word, String sentence) {
+        int frequency = 0;
+        int wordLength = word.length();
+        int index = sentence.indexOf(word);
+
+        while (index != -1) {
+            frequency++;
+            index = sentence.indexOf(word, index + wordLength);
+        }
+
+        return frequency;
+    }
+}
+
